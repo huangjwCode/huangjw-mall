@@ -83,6 +83,7 @@
 <script>
 
   import { getHomeMultiData, getHomeGoods } from "network/home.js";
+  import { deBounce } from "common/utils.js";
 
   import NavBar from 'components/common/navbar/NavBar.vue'
   import Scroller from "components/common/scroller/Scroller.vue";
@@ -131,7 +132,17 @@
       //this.getHomeGoods("new");
       //this.getHomeGoods("sell");
     },
-    mounted() {},
+    mounted() {
+      this.$bus.$on("goodsImgLoadEvent",() => {
+        //this.$refs.scroll.refresh();
+        //console.log(this.$refs.scroll.refresh)
+        /**
+        * 防抖函数 , 防抖函数只执行一次，后面执行的都是其返回的函数
+        */
+        const refresh = deBounce(this.$refs.scroll.refresh, 50);
+        refresh();
+      });
+    },
     activated() {
       //事件总线
       this.$bus.$on("goodsImgLoadEvent", this.bcFunc);
@@ -199,10 +210,10 @@
           this.$refs.tabControl1.currIndex = index;
           this.$refs.tabControl2.currIndex = index;
         },
-          SwiperImgLoad() {
-            //等到 swiper的图片加载好之后
-            this.tabControloffsetTop = this.$refs.tabControl1.$el.offsetTop;
-          }
+        SwiperImgLoad() {
+          //等到 swiper的图片加载好之后
+          this.tabControloffsetTop = this.$refs.tabControl1.$el.offsetTop;
+        }
     }
 	}
 </script>
@@ -241,6 +252,7 @@
   */
 .top_tab_control {
   position: relative;
+  top:-0.0625rem;
   z-index: 9;
 }
 .wrapper {

@@ -6,7 +6,7 @@
       :key="index"
     >
       <a :href="item.link">
-        <img :src="item.image" alt="" />
+        <img :src="item.image" alt="" @load="imgLoad"/>
       </a>
       <div>
         {{ item.title }}
@@ -20,6 +20,12 @@
         name: "HomeRecommend",
         props: {
           sun_recommends: Array
+        },
+        methods: {
+          imgLoad() {
+            //可以在home页面中，单独$off掉home的那个事件。
+            this.$bus.$emit("goodsImgLoadEvent");
+          }
         }
     }
 </script>

@@ -1,35 +1,29 @@
 <template>
-    <div class="good-list">
-      <good-list-item v-for="item in cgoods" :key="item.image" :good-item="item"/>
-    </div>
+  <div class="goods">
+    <good-list-item
+      v-for="(item, index) in sun_goods"
+      :goodsItem="item"
+      :key="index"
+    ></good-list-item>
+  </div>
 </template>
-
 <script>
-  import GoodListItem from "./GoodListItem";
-  export default {
-    name: "GoodsList",
-    props:{
-        cgoods:{
-            type:Array,
-            default() {
-                return []
-            }
-        }
-    },
-    components:{
-      GoodListItem
-    }
+import GoodListItem from "./GoodListItem.vue";
+export default {
+  components: {
+    GoodListItem
+  },
+  props: {
+    sun_goods: Array
   }
+};
 </script>
 
 <style scoped>
-  .good-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: var(--color-background);
-
-    padding: 2px;
-  }
-
+.goods {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
 </style>
