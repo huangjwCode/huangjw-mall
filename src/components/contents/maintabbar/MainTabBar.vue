@@ -11,7 +11,7 @@
 			  <img slot="item-icon-active" src="~assets/img/tabbar/allactive.svg" alt=""/>
 			  <div slot="item-text">分类</div>
 		  </TabBarItem>
-		  <TabBarItem path="/cartfull" activeColor="#d4237a">
+		  <TabBarItem path="/cart" activeColor="#d4237a">
 			  <img slot="item-icon" src="~assets/img/tabbar/cartfull.svg" alt=""/>
 			  <img slot="item-icon-active" src="~assets/img/tabbar/cartfullactive.svg" alt=""/>
 			  <div slot="item-text">购物车</div>

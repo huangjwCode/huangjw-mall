@@ -6,7 +6,7 @@
       :key="index"
     >
       <a :href="item.link">
-        <img :src="item.image" alt="" @load="imgLoad"/>
+        <img v-lazy="item.image" alt="" @load="imgLoad"/>
       </a>
       <div>
         {{ item.title }}
