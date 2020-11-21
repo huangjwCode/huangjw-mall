@@ -6,7 +6,7 @@
 			  <img slot="item-icon-active" src="~assets/img/tabbar/homeactive.svg" alt=""/>
 			  <div slot="item-text">首页</div>
 		  </TabBarItem>
-		  <TabBarItem path="/classify" activeColor="#d4237a">
+		  <TabBarItem path="/category" activeColor="#d4237a">
 			  <img slot="item-icon" src="~assets/img/tabbar/all.svg" alt=""/>
 			  <img slot="item-icon-active" src="~assets/img/tabbar/allactive.svg" alt=""/>
 			  <div slot="item-text">分类</div>
@@ -16,12 +16,12 @@
 			  <img slot="item-icon-active" src="~assets/img/tabbar/cartfullactive.svg" alt=""/>
 			  <div slot="item-text">购物车</div>
 		  </TabBarItem>
-		  <TabBarItem path="/account" activeColor="#d4237a">
+		  <TabBarItem path="/user" activeColor="#d4237a">
 			  <img slot="item-icon" src="~assets/img/tabbar/account.svg" alt=""/>
 			  <img slot="item-icon-active" src="~assets/img/tabbar/accountactive.svg" alt=""/>
 			  <div slot="item-text">我的</div>
 		  </TabBarItem>
-	  </TabBar>    
+	  </TabBar>
   </div>
 </template>
 

@@ -3,9 +3,9 @@ import VueRouter from 'vue-router'
 
 //懒加载写法
 const Home = () => import('views/home/Home.vue')
-const Classify = () => import('views/classify/Classify.vue')
+const Category = () => import('views/category/Category.vue')
 const Cart = () => import('views/cart/Cart.vue')
-const Account = () => import('views/account/Account.vue')
+const User = () => import('views/user/User.vue')
 const Detail = () => import('views/detail/Detail.vue')
 
 Vue.use(VueRouter)
@@ -20,16 +20,16 @@ const routes = [
 		component:Home
 	},
 	{
-		path:'/classify',
-		component:Classify
+		path:'/category',
+		component:Category
 	},
 	{
 		path:'/cart',
 		component:Cart
 	},
 	{
-		path:'/account',
-		component:Account
+		path:'/user',
+		component:User
 	},
 	{
 		path:'/detail/:iid',

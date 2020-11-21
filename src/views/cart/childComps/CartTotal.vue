@@ -77,7 +77,7 @@ export default {
 }
 .buy {
   width: 5rem;
-  background-color: #f03;
+  background-color: var(--color-tint);
   color: white;
 }
 </style>
