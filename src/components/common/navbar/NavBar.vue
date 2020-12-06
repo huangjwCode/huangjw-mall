@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar">
-    <div class="left"><slot name="left"></slot></div>
-    <div class="center"><slot name="center"></slot></div>
-    <div class="right"><slot name="right"></slot></div>
+    <div class="nav-bar-left"><slot name="left"></slot></div>
+    <div class="nav-bar-center"><slot name="center"></slot></div>
+    <div class="nav-bar-right"><slot name="right"></slot></div>
   </div>
 </template>
 
@@ -23,11 +23,11 @@
   
   
 
-  .left,.right{
+  .nav-bar-left,.nav-bar-right{
     width: 3.75rem;
   }
 
-  .center{
+  .nav-bar-center{
     flex: 1;
   }
 </style>

@@ -4,13 +4,13 @@
       <img class="u-bg" src="~assets/img/static/bg/user.jpg"/>
 			<div class="user-wrapper">
 				<img class="avatar" src="~assets/img/static/icon/default-avatar.png"/>
-				<div class="cen column">
+				<div class="cen column" v-if="hasLogin">
 					<span class="username f-m">huangjw</span>
 					<span class="user-group">普通会员</span>
 				</div>
-				<!--<div class="login-box">
+				<div class="login-box" v-else @click="navTo('/login',{})">
 					<span>请登录</span>
-				</div>-->
+				</div>
 			</div>
 			<img class="arc-line" src="~assets/img/static/icon/arc.png" />
     </div>
@@ -93,7 +93,9 @@ import mixListCell from "components/common/mix-list-cell/mix-list-cell.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      hasLogin:false
+    };
   },
   computed: {
     cartLength() {
@@ -104,6 +106,9 @@ export default {
     mixListCell
   },
   methods: {
+      navTo(path,query){
+          this.$router.replace({path:path,query:query})
+      },
 			//清空浏览记录
 			clearHistory(){
 

@@ -1,7 +1,8 @@
 <template>
   <div id="category">
     <div class="category">
-      <nav-bar class="category_nav"><template #center>分类</template></nav-bar>
+      <!--<nav-bar class="category_nav"><template #center>分类</template></nav-bar>-->
+      <page-header></page-header>
     </div>
     <div class="main">
       <div class="categoryleft">
@@ -20,6 +21,8 @@ import CategoryLeft from "./childComps/CategoryLeft.vue";
 import CategoryRight from "./childComps/CategoryRight.vue";
 
 import NavBar from "components/common/navbar/NavBar.vue";
+import PageHeader from "components/contents/page-header/page-header.vue"
+
 export default {
   data() {
     return {
@@ -34,7 +37,8 @@ export default {
   components: {
     NavBar,
     CategoryLeft,
-    CategoryRight
+    CategoryRight,
+    PageHeader
   },
   methods: {
     async getCategoryInfo(maitKey) {
